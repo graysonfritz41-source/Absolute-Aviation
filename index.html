@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Aviation - Elite Pilot Training | Austin, Texas</title>
+    <meta name="description" content="Elite pilot training in Austin, Texas. Zero to Hero program: become a professional pilot in 10-12 months. Modern fleet, expert instructors, 95% pass rate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sky-blue: #0EA5E9;
+            --sky-blue-light: #38BDF8;
+            --sky-blue-dark: #0284C7;
+            --dark: #0F172A;
+            --dark-medium: #1E293B;
+            --dark-light: #334155;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --slate: #64748B;
+            --slate-light: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            color: var(--sky-blue);
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--slate-light);
+            font-weight: 400;
+            margin-top: -4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        nav a:not(.btn):hover {
+            color: var(--sky-blue);
+        }
+
+        nav a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sky-blue);
+            transition: width 0.3s;
+        }
+
+        nav a:not(.btn):hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: none;
+            letter-spacing: 0;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--sky-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--sky-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background: var(--dark-medium);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 50%, rgba(14, 165, 233, 0.3) 100%),
+                url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+            animation: pulse 10s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            max-width: 1000px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--sky-blue-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            margin-top: 5rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sky-blue-light);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sky-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        /* Program Overview */
+        .program-overview {
+            background: var(--off-white);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
+            border-color: var(--sky-blue-light);
+        }
+
+        .program-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .program-card p {
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .program-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .program-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--slate);
+        }
+
+        .program-card li i {
+            color: var(--sky-blue);
+            margin-top: 4px;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .timeline-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .timeline-section .section-header p {
+            color: var(--slate-light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--sky-blue);
+            transform: scale(1.02);
+        }
+
+        .timeline-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sky-blue-light);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-duration {
+            color: var(--sky-blue-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--slate-light);
+            line-height: 1.8;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--sky-blue);
+            border: 4px solid var(--dark);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--off-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
+            border-color: var(--sky-blue-light);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        /* Fleet Section */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .fleet-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .fleet-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .fleet-content {
+            padding: 2rem;
+        }
+
+        .fleet-content h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .fleet-type {
+            color: var(--sky-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .fleet-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fleet-spec {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--slate);
+            font-size: 0.95rem;
+        }
+
+        .fleet-spec i {
+            color: var(--sky-blue);
+        }
+
+        .fleet-features {
+            list-style: none;
+        }
+
+        .fleet-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--slate);
+            font-size: 0.95rem;
+        }
+
+        .fleet-features i {
+            color: var(--sky-blue);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.1);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--sky-blue-light);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .testimonial-info h4 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-role {
+            color: var(--sky-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .testimonial-rating {
+            color: #FDB022;
+            margin-top: 1rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .team-content {
+            padding: 2rem;
+        }
+
+        .team-content h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .team-role {
+            color: var(--sky-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .team-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .credential-badge {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--sky-blue);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Discovery Flight CTA */
+        .discovery-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-medium) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discovery-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+        }
+
+        .discovery-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .discovery-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .discovery-content p {
+            font-size: 1.2rem;
+            color: var(--slate-light);
+            margin-bottom: 1rem;
+        }
+
+        .discovery-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--sky-blue-light);
+            margin: 1.5rem 0;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .discovery-includes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .discovery-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .discovery-item i {
+            color: var(--sky-blue);
+            font-size: 1.5rem;
+            margin-top: 2px;
+        }
+
+        .discovery-item-text h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .discovery-item-text p {
+            font-size: 0.95rem;
+            color: var(--slate-light);
+            margin: 0;
+        }
+
+        /* Apply Form */
+        .apply-section {
+            background: var(--off-white);
+        }
+
+        .apply-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sky-blue);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .form-submit .btn {
+            padding: 1.25rem 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .contact .section-header h2 {
+            color: var(--white);
+        }
+
+        .contact .section-header p {
+            color: var(--slate-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--sky-blue);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--slate-light);
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: var(--sky-blue-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            color: var(--slate-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sky-blue);
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--sky-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--slate-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--sky-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--slate-light);
+        }
+
+        /* Scholarship Badge */
+        .scholarship-banner {
+            background: linear-gradient(135deg, #FDB022 0%, #F59E0B 100%);
+            padding: 0.75rem 2rem;
+            text-align: center;
+            color: var(--dark);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scholarship-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Airlines Partnership */
+        .airlines-partners {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .airlines-partners h4 {
+            font-family: 'Sora', sans-serif;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .airlines-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .airline-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--slate);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .airline-logo:hover {
+            opacity: 1;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+                padding-left: 80px;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fleet-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scholarship Banner -->
+    <div class="scholarship-banner">
+        <i class="fas fa-graduation-cap"></i> New: $10,000 Scholarship Opportunities Available for 2025 Programs! <a href="#apply" style="color: inherit; text-decoration: underline; margin-left: 0.5rem;">Apply Now →</a>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo-container">
+                <i class="fas fa-plane-departure logo-icon"></i>
+                <div>
+                    <div class="logo-text">ABSOLUTE AVIATION</div>
+                    <div class="logo-tagline">Elite Pilot Training Since 2020</div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#timeline">Curriculum</a></li>
+                <li><a href="#fleet">Fleet</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#apply" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-certificate"></i>
+                Zero to Hero Program
+            </div>
+            <h1>BECOME A PROFESSIONAL<br><span>PILOT IN 12 MONTHS</span></h1>
+            <p>Zero experience to airline-ready in our structured career program. Modern fleet, expert instructors, and industry-leading success rates.</p>
+            <div class="hero-buttons">
+                <a href="#apply" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> Book a Tour</a>
+                <a href="#discovery" class="btn btn-secondary"><i class="fas fa-plane"></i> Discovery Flight</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">10-12</div>
+                    <div class="hero-stat-label">Months to Complete</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">95%</div>
+                    <div class="hero-stat-label">First-Time Pass Rate</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">$89,999</div>
+                    <div class="hero-stat-label">Starting Investment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="program-overview" id="program">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-rocket"></i>
+                    Zero to Hero Program
+                </div>
+                <h2>Your Complete Path to the Airlines</h2>
+                <p>Our comprehensive Zero to Hero Program takes you from no experience to airline-ready professional pilot in 10-12 months, with all certifications included.</p>
+            </div>
+            <div class="program-grid">
+                <div class="program-card fade-in">
+                    <div class="program-card-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Complete Training Package</h3>
+                    <p>Everything you need from zero experience to commercial pilot with multi-engine and CFI ratings.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span>Private Pilot Certificate (PPL)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Instrument Rating (IR)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Commercial Pilot Certificate (CPL)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Multi-Engine Rating (MEL)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Certified Flight Instructor (CFI)</span></li>
+                    </ul>
+                </div>
+
+                <div class="program-card fade-in">
+                    <div class="program-card-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Modern Fleet Access</h3>
+                    <p>Train in brand-new aircraft equipped with the latest glass cockpit technology.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span>Cessna 172s with Garmin G1000</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Piper Seminoles with G1000s</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Advanced autopilot systems</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Well-maintained fleet</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>24/7 aircraft availability</span></li>
+                    </ul>
+                </div>
+
+                <div class="program-card fade-in">
+                    <div class="program-card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Instruction</h3>
+                    <p>Learn from full-time, dedicated instructors who are committed to your success.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span>Full-time professional CFIs</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Not time-building instructors</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Personalized instruction</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Industry experience</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Family atmosphere</span></li>
+                    </ul>
+                </div>
+
+                <div class="program-card fade-in">
+                    <div class="program-card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Career Support</h3>
+                    <p>Direct pathways to regional and major airlines with our industry partnerships.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span>Airline partnership programs</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Interview preparation</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Resume building</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Job placement assistance</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Networking opportunities</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Airline Partners -->
+            <div class="airlines-partners">
+                <h4>Airline Partnership Programs</h4>
+                <div class="airlines-grid">
+                    <div class="airline-logo">SKYWEST</div>
+                    <div class="airline-logo">ENVOY AIR</div>
+                    <div class="airline-logo">REPUBLIC</div>
+                    <div class="airline-logo">PIEDMONT</div>
+                    <div class="airline-logo">PSA AIRLINES</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline/Curriculum -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-route"></i>
+                    Training Timeline
+                </div>
+                <h2>Your Journey to the Airlines</h2>
+                <p>Our structured curriculum takes you through each certification step-by-step, building skills progressively over 10-12 months.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-number">01</div>
+                        <h3>Private Pilot Certificate</h3>
+                        <div class="timeline-duration"><i class="fas fa-clock"></i> Months 1-3</div>
+                        <p>Begin your aviation journey with fundamental flying skills. Learn aircraft systems, navigation, weather, and flight maneuvers. Complete your first solo flight and build confidence in the cockpit.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-number">02</div>
+                        <h3>Instrument Rating</h3>
+                        <div class="timeline-duration"><i class="fas fa-clock"></i> Months 4-6</div>
+                        <p>Master instrument flight rules and flying in low visibility conditions. Develop precision flying skills using advanced avionics and navigation systems in our G1000-equipped aircraft.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-number">03</div>
+                        <h3>Commercial Pilot Certificate</h3>
+                        <div class="timeline-duration"><i class="fas fa-clock"></i> Months 7-8</div>
+                        <p>Refine your skills to professional standards. Learn advanced maneuvers, commercial operations, and the business of aviation. Earn your ticket to fly for compensation.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-number">04</div>
+                        <h3>Multi-Engine Rating</h3>
+                        <div class="timeline-duration"><i class="fas fa-clock"></i> Month 9</div>
+                        <p>Transition to multi-engine aircraft in our Piper Seminoles. Learn complex aircraft systems, engine-out procedures, and multi-engine operations essential for airline flying.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-number">05</div>
+                        <h3>Certified Flight Instructor</h3>
+                        <div class="timeline-duration"><i class="fas fa-clock"></i> Months 10-12</div>
+                        <p>Learn to teach and build your hours. Develop communication and instructional skills while gaining the experience needed for airline applications. Many of our CFIs are hired internally!</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    Why Absolute Aviation
+                </div>
+                <h2>What Sets Us Apart</h2>
+                <p>Discover why hundreds of pilots have chosen Absolute Aviation for their professional flight training.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Modern Aircraft Fleet</h3>
+                    <p>Train exclusively in brand-new Cessna 172s and Piper Seminoles, all equipped with Garmin G1000 glass cockpits. Our fleet is professionally maintained and ready when you are.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>95% First-Time Pass Rate</h3>
+                    <p>Our structured curriculum and experienced instructors deliver industry-leading results. We prepare you thoroughly for every checkride, ensuring confidence and success.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Airline Partnerships</h3>
+                    <p>Direct pathways to regional and major airlines through our partnership programs. Get interviews, mentorship, and career support from our extensive airline network.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Full-Time Dedicated Instructors</h3>
+                    <p>Unlike other schools, our instructors aren't time-builders rushing to the airlines. They're career educators committed to your success, providing consistent, quality instruction.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Family Atmosphere</h3>
+                    <p>We're more than a flight school – we're a community. Experience personalized attention, supportive culture, and lifelong friendships in our welcoming environment.</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Scholarship Opportunities</h3>
+                    <p>We offer $10,000 in scholarship opportunities for qualified students. Making professional pilot training more accessible is part of our mission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-plane-departure"></i>
+                    Our Fleet
+                </div>
+                <h2>Train in Modern Aircraft</h2>
+                <p>Our fleet features the latest glass cockpit technology, giving you experience with the same avionics used in modern airliners.</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card fade-in">
+                    <div class="fleet-image">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Cessna 172 Skyhawk</h3>
+                        <div class="fleet-type">Single-Engine Trainer</div>
+                        <div class="fleet-specs">
+                            <div class="fleet-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>125 kts cruise</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-users"></i>
+                                <span>4 seats</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>56 gal fuel</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-weight"></i>
+                                <span>2,550 lb MTOW</span>
+                            </div>
+                        </div>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Garmin G1000 NXi Glass Cockpit</li>
+                            <li><i class="fas fa-check"></i> GFC 700 Autopilot System</li>
+                            <li><i class="fas fa-check"></i> ADS-B Out Compliant</li>
+                            <li><i class="fas fa-check"></i> Brand New 2023-2024 Models</li>
+                            <li><i class="fas fa-check"></i> Air Conditioning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card fade-in">
+                    <div class="fleet-image">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Piper Seminole</h3>
+                        <div class="fleet-type">Multi-Engine Trainer</div>
+                        <div class="fleet-specs">
+                            <div class="fleet-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>160 kts cruise</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-users"></i>
+                                <span>4 seats</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>110 gal fuel</span>
+                            </div>
+                            <div class="fleet-spec">
+                                <i class="fas fa-weight"></i>
+                                <span>3,800 lb MTOW</span>
+                            </div>
+                        </div>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Garmin G1000 Integrated Flight Deck</li>
+                            <li><i class="fas fa-check"></i> Dual Lycoming Engines</li>
+                            <li><i class="fas fa-check"></i> Advanced Autopilot</li>
+                            <li><i class="fas fa-check"></i> Counter-Rotating Props</li>
+                            <li><i class="fas fa-check"></i> Complex Aircraft Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-comments"></i>
+                    Student Success Stories
+                </div>
+                <h2>Hear From Our Graduates</h2>
+                <p>Don't just take our word for it – see what our students have to say about their experience at Absolute Aviation.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        Absolute Aviation changed my life. The instructors genuinely care about your success, and the modern fleet made training a joy. I passed all my checkrides on the first try and now I'm flying for a regional airline!
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JR</div>
+                        <div class="testimonial-info">
+                            <h4>Jessica Rodriguez</h4>
+                            <div class="testimonial-role">First Officer, SkyWest Airlines</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        Best decision I ever made. The Zero to Hero program is structured perfectly, and the G1000 training prepared me for the real world. The family atmosphere here is unmatched – you're not just a number.
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MC</div>
+                        <div class="testimonial-info">
+                            <h4>Michael Chen</h4>
+                            <div class="testimonial-role">CFI, Absolute Aviation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        I researched flight schools across Texas and Absolute Aviation stood out. Modern aircraft, professional instructors, and actual career support – not just promises. Worth every penny.
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SA</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Anderson</h4>
+                            <div class="testimonial-role">Commercial Pilot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        The instructors at Absolute Aviation are the real deal. They're not just building hours – they're career educators who want to see you succeed. The training quality is exceptional.
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DM</div>
+                        <div class="testimonial-info">
+                            <h4>David Martinez</h4>
+                            <div class="testimonial-role">First Officer, Envoy Air</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        From day one, I felt like part of the family. The personalized instruction and modern training environment exceeded my expectations. Highly recommend for anyone serious about aviation.
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">EJ</div>
+                        <div class="testimonial-info">
+                            <h4>Emily Johnson</h4>
+                            <div class="testimonial-role">Flight Instructor Candidate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        The airline partnership program was a game-changer. I had multiple interview opportunities before even finishing CFI training. Absolute Aviation delivers on their promises.
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RT</div>
+                        <div class="testimonial-info">
+                            <h4>Robert Thompson</h4>
+                            <div class="testimonial-role">First Officer, Republic Airways</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-friends"></i>
+                    Our Team
+                </div>
+                <h2>Meet Your Instructors</h2>
+                <p>Learn from experienced aviation professionals dedicated to your success.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Captain James Mitchell</h3>
+                        <div class="team-role">Chief Flight Instructor</div>
+                        <p class="team-bio">With over 15,000 flight hours and 20 years of aviation experience, Captain Mitchell brings airline-level expertise to flight training. Former Boeing 737 captain dedicated to developing the next generation of professional pilots.</p>
+                        <div class="team-credentials">
+                            <span class="credential-badge">ATP</span>
+                            <span class="credential-badge">CFI/CFII/MEI</span>
+                            <span class="credential-badge">15,000+ hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Sarah Williams</h3>
+                        <div class="team-role">Lead CFI - Instrument Training</div>
+                        <p class="team-bio">Specializing in instrument instruction, Sarah has helped hundreds of students master IFR flying. Her patient teaching style and technical expertise make complex concepts easy to understand. Gold Seal CFI with exceptional student success rates.</p>
+                        <div class="team-credentials">
+                            <span class="credential-badge">Gold Seal CFI</span>
+                            <span class="credential-badge">CFII/MEI</span>
+                            <span class="credential-badge">3,500+ hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Marcus Johnson</h3>
+                        <div class="team-role">Senior CFI - Multi-Engine Specialist</div>
+                        <p class="team-bio">Multi-engine expert with extensive experience in complex aircraft operations. Marcus's real-world airline experience provides students with practical insights and advanced techniques. Former corporate pilot turned dedicated educator.</p>
+                        <div class="team-credentials">
+                            <span class="credential-badge">CFI/CFII/MEI</span>
+                            <span class="credential-badge">ATP</span>
+                            <span class="credential-badge">8,000+ hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Lisa Rodriguez</h3>
+                        <div class="team-role">CFI - Private Pilot Training</div>
+                        <p class="team-bio">Passionate about introducing new students to aviation, Lisa creates a supportive and encouraging learning environment. Her enthusiasm is contagious, and students consistently praise her clear communication and attention to detail.</p>
+                        <div class="team-credentials">
+                            <span class="credential-badge">CFI/CFII</span>
+                            <span class="credential-badge">MEI</span>
+                            <span class="credential-badge">2,000+ hrs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discovery Flight CTA -->
+    <section class="discovery-cta" id="discovery">
+        <div class="container">
+            <div class="discovery-content">
+                <h2>Try Flying With a Discovery Flight</h2>
+                <p>Not sure if flying is for you? Experience it firsthand with one of our expert instructors.</p>
+                <div class="discovery-price">$199</div>
+                <p>60-minute introductory flight experience</p>
+                
+                <div class="discovery-includes">
+                    <div class="discovery-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="discovery-item-text">
+                            <h4>Pre-Flight Briefing</h4>
+                            <p>Learn aircraft systems and flight basics</p>
+                        </div>
+                    </div>
+                    <div class="discovery-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="discovery-item-text">
+                            <h4>Hands-On Flying</h4>
+                            <p>You'll actually fly the plane!</p>
+                        </div>
+                    </div>
+                    <div class="discovery-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="discovery-item-text">
+                            <h4>G1000 Experience</h4>
+                            <p>Modern glass cockpit technology</p>
+                        </div>
+                    </div>
+                    <div class="discovery-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="discovery-item-text">
+                            <h4>Career Consultation</h4>
+                            <p>Discuss your path to the airlines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-primary" style="padding: 1.25rem 3rem; font-size: 1.1rem;">
+                    <i class="fas fa-calendar-check"></i> Book Your Discovery Flight
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Form -->
+    <section class="apply-section" id="apply">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-paper-plane"></i>
+                    Application
+                </div>
+                <h2>Start Your Aviation Career Today</h2>
+                <p>Complete the form below and our admissions team will contact you within 24 hours to discuss the Zero to Hero Program.</p>
+            </div>
+            <div class="apply-container">
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required placeholder="Smith">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="john.smith@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required placeholder="(512) 555-1234">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Current Location</label>
+                            <input type="text" placeholder="Austin, TX">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Flight Experience *</label>
+                            <select required>
+                                <option value="">Select your experience level</option>
+                                <option value="none">No Experience (Zero to Hero)</option>
+                                <option value="discovery">Discovery Flight Only</option>
+                                <option value="student">Current Student Pilot</option>
+                                <option value="ppl">Private Pilot Certificate</option>
+                                <option value="instrument">Instrument Rating</option>
+                                <option value="commercial">Commercial Certificate</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Program Start Date Preference</label>
+                            <select>
+                                <option value="">Select preferred start date</option>
+                                <option value="asap">As Soon As Possible</option>
+                                <option value="1-3">1-3 Months</option>
+                                <option value="3-6">3-6 Months</option>
+                                <option value="6+">6+ Months</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Questions or Comments</label>
+                            <textarea placeholder="Tell us about your aviation goals..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Contact Us
+                </div>
+                <h2>Visit Our Facility</h2>
+                <p>Located at Austin-Bergstrom International Airport. Schedule a tour to see our modern fleet and facilities.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:512-847-2190">(512) 847-2190</a></p>
+                    <p>Monday - Saturday: 8:00 AM - 8:00 PM<br>Sunday: 9:00 AM - 5:00 PM</p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:info@absoluteaviation.com">info@absoluteaviation.com</a></p>
+                    <p>We respond within 24 hours</p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Absolute Aviation<br>7000 Burleson Road, Hangar 12<br>Austin, TX 78744</p>
+                    <p>Near Austin-Bergstrom International</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>ABSOLUTE AVIATION</h3>
+                <p>Elite pilot training in Austin, Texas. We're committed to developing the next generation of professional pilots through quality instruction, modern aircraft, and a supportive learning environment.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="#program">Zero to Hero</a></li>
+                    <li><a href="#timeline">Curriculum</a></li>
+                    <li><a href="#discovery">Discovery Flight</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>School</h4>
+                <ul>
+                    <li><a href="#why">Why Choose Us</a></li>
+                    <li><a href="#fleet">Our Fleet</a></li>
+                    <li><a href="#team">Meet the Team</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:512-847-2190">(512) 847-2190</a></li>
+                    <li><a href="mailto:info@absoluteaviation.com">info@absoluteaviation.com</a></li>
+                    <li><a href="#contact">Visit Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Absolute Aviation. All rights reserved. | 7000 Burleson Road, Austin, TX 78744</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your application! Our admissions team will contact you within 24 hours.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
